@@ -34,6 +34,9 @@ const omitEmpty = (obj, options) => {
 };
 
 function isEmpty(value, omitZero) {
+  if (Number.isNaN(value))
+    return true;
+
   switch (typeOf(value)) {
     case 'null':
     case 'undefined':
